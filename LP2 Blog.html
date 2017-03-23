@@ -1,0 +1,538 @@
+﻿		<!DOCTYPE html>
+		<html lang="en-US">
+		
+<head>
+		<meta charset="UTF-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1026.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+		<link rel="profile" href="http://gmpg.org/xfn/11">
+		<link rel="pingback" href="https://web.northeastern.edu/prehealth/xmlrpc.php">
+		<!--[if lt IE 9]>
+			<script src="https://web.northeastern.edu/prehealth/wp-content/themes/catch-base-pro/js/html5.min.js"></script>
+		<![endif]-->
+		<title>Exploring Medicine &#8211; PreHealth Advising Program</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="PreHealth Advising Program &raquo; Feed" href="https://web.northeastern.edu/prehealth/feed" />
+<link rel="alternate" type="application/rss+xml" title="PreHealth Advising Program &raquo; Comments Feed" href="https://web.northeastern.edu/prehealth/comments/feed" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/web.northeastern.edu\/prehealth\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6.1"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='kamn-css-easy-twitter-feed-widget-css'  href='https://web.northeastern.edu/prehealth/wp-content/plugins/easy-twitter-feed-widget/easy-twitter-feed-widget.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='catchbase-style-css'  href='https://web.northeastern.edu/prehealth/wp-content/themes/catch-base-pro/style.css?ver=3.0.1' type='text/css' media='all' />
+<link rel='stylesheet' id='genericons-css'  href='https://web.northeastern.edu/prehealth/wp-content/plugins/jetpack/_inc/genericons/genericons/genericons.css?ver=3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='catchbase-responsive-css'  href='https://web.northeastern.edu/prehealth/wp-content/themes/catch-base-pro/css/responsive.css?ver=4.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='simcal-qtip-css'  href='https://web.northeastern.edu/prehealth/wp-content/plugins/google-calendar-events/assets/css/vendor/jquery.qtip.min.css?ver=3.1.8' type='text/css' media='all' />
+<link rel='stylesheet' id='simcal-default-calendar-grid-css'  href='https://web.northeastern.edu/prehealth/wp-content/plugins/google-calendar-events/assets/css/default-calendar-grid.min.css?ver=3.1.8' type='text/css' media='all' />
+<link rel='stylesheet' id='simcal-default-calendar-list-css'  href='https://web.northeastern.edu/prehealth/wp-content/plugins/google-calendar-events/assets/css/default-calendar-list.min.css?ver=3.1.8' type='text/css' media='all' />
+<link rel='stylesheet' id='jetpack_css-css'  href='https://web.northeastern.edu/prehealth/wp-content/plugins/jetpack/css/jetpack.css?ver=4.3.2' type='text/css' media='all' />
+<script type='text/javascript' src='https://web.northeastern.edu/prehealth/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://web.northeastern.edu/prehealth/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='https://web.northeastern.edu/prehealth/wp-content/themes/catch-base-pro/js/jquery.sidr.min.js?ver=1.2.1'></script>
+<script type='text/javascript' src='https://web.northeastern.edu/prehealth/wp-content/themes/catch-base-pro/js/catchbase-custom-scripts.min.js'></script>
+<link rel='https://api.w.org/' href='https://web.northeastern.edu/prehealth/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://web.northeastern.edu/prehealth/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://web.northeastern.edu/prehealth/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.6.1" />
+<link rel="canonical" href="https://web.northeastern.edu/prehealth/exploring-medicine" />
+<link rel='shortlink' href='https://wp.me/P5vniT-w' />
+<link rel="alternate" type="application/json+oembed" href="https://web.northeastern.edu/prehealth/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fweb.northeastern.edu%2Fprehealth%2Fexploring-medicine" />
+<link rel="alternate" type="text/xml+oembed" href="https://web.northeastern.edu/prehealth/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fweb.northeastern.edu%2Fprehealth%2Fexploring-medicine&#038;format=xml" />
+
+<link rel='dns-prefetch' href='//v0.wordpress.com'>
+<style type='text/css'>img#wpstats{display:none}</style><!-- refreshing cache --><!-- refreshing cache -->
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Exploring Medicine" />
+<meta property="og:url" content="https://web.northeastern.edu/prehealth/exploring-medicine" />
+<meta property="og:description" content="Careers in the Health Professions are both rewarding and demanding. Before you begin down the path of a healthcare career, be sure that you understand the requirements of the professions. Consider …" />
+<meta property="article:published_time" content="2014-05-29T19:16:58+00:00" />
+<meta property="article:modified_time" content="2015-07-21T14:55:24+00:00" />
+<meta property="og:site_name" content="PreHealth Advising Program" />
+<meta property="og:image" content="https://s0.wp.com/i/blank.jpg" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary" />
+<!-- PreHealth Advising Program inline CSS Styles -->
+<style type="text/css" media="screen">
+.site-title a, .site-description { color: #cc0000; }
+body, button, input, select, textarea { color: #615445; }
+a { color: #cc0000; }
+a:hover, a:focus, a:active { color: #cc0000; }
+.site-title a:hover { color: #615445; }
+.site-description { color: #cc0000; }
+#main .entry-title a:hover { color: #cc0000; }
+#main .entry-meta a { color: #cc0000; }
+#main .entry-meta a:hover { color: #615445; }
+.sidebar-primary .widget-wrap .widget-title, .sidebar-primary .widget-wrap .widget-title a, .sidebar-secondary .widget-wrap .widget-title, .widget-wrap .sidebar-secondary .widget-title a { color: #cc0000; }
+.sidebar-primary .widget-wrap, .sidebar-secondary .widget-wrap { color: #615445; }
+.sidebar-primary .widget-wrap a, .sidebar-secondary .widget-wrap a { color: #615445; }
+#nav-below a, #nav-below .wp-pagenavi a, #nav-below .wp-pagenavi span, #infinite-handle span { color: #cc0000; }
+#nav-below a:hover, #nav-below .wp-pagenavi a:hover, #nav-below .wp-pagenavi span.current, #infinite-handle span:hover, #infinite-handle span:hover { color: #615445; }
+#site-generator { background-color: #ffffff; color: #000000; }
+#site-generator a { color: #cc0000; }
+#supplementary .widget-wrap a { color: #cc0000; }
+#promotion-message a { color: #cc0000; }
+#featured-content .entry-title, #featured-content .entry-title a { color: #cc0000; }
+#featured-content { color: #cc0000; }
+#featured-content a { color: #615445; }
+.nav-primary { background-color: #ffffff; }
+.nav-primary ul.menu a { color: #615445; }
+.nav-primary ul.menu li:hover > a, .nav-primary ul.menu a:focus, .nav-primary ul.menu .current-menu-item > a, .nav-primary ul.menu .current-menu-ancestor > a, .nav-primary ul.menu .current_page_item > a, .nav-primary ul.menu .current_page_ancestor > a { background-color: #ffffff; color: #cc0000; }
+.nav-primary ul.menu .sub-menu a, .nav-primary ul.menu .children a { background-color: #ffffff; color: #615445; }
+.nav-secondary { background-color: #f2f2f2; }
+.nav-secondary ul.menu a { color: #615445; }
+.nav-secondary ul.menu li:hover > a, .nav-secondary ul.menu a:focus, .nav-secondary ul.menu .current-menu-item > a, .nav-secondary ul.menu .current-menu-ancestor > a, .nav-secondary ul.menu .current_page_item > a, .nav-secondary ul.menu .current_page_ancestor > a { background-color: #f2f2f2; color: #cc0000; }
+.nav-secondary ul.menu .sub-menu a, .nav-secondary ul.menu .children a { background-color: #f2f2f2; color: #000000; }
+.sidebar-header-right .wrapper, .sidebar-header-right .widget_nav_menu { background-color: #ffffff; }
+.sidebar-header-right ul.menu a { color: #cc0000; }
+.sidebar-header-right ul.menu li:hover > a, .sidebar-header-right ul.menu a:focus, .sidebar-header-right ul.menu .current-menu-item > a, .sidebar-header-right ul.menu .current-menu-ancestor > a { background-color: #ffffff; color: #615445; }
+.sidebar-header-right ul.menu .sub-menu a { background-color: #ffffff; color: #000000; }
+.nav-footer { background-color: #ffffff; }
+.nav-footer ul.menu a { color: #cc0000; }
+.nav-footer ul.menu li:hover > a, .nav-footer ul.menu a:focus, .nav-footer ul.menu .current-menu-item > a, .nav-footer ul.menu .current-menu-ancestor > a, .nav-footer ul.menu .current_page_item > a, .nav-footer ul.menu .current_page_ancestor > a { background-color: #ffffff; color: #615445; }
+.nav-footer ul.menu .sub-menu a, .nav-footer ul.menu .children a { background-color: #ffffff; color: #000000; }
+</style>
+</head>
+
+<body class="page page-id-32 page-parent page-template-default two-columns content-left full-content mobile-menu-three">
+		<div id="page" class="hfeed site">
+				<header id="masthead" role="banner">
+    		<div class="wrapper">
+		    
+    <div id="mobile-header-left-menu" class="mobile-menu-anchor primary-menu">
+        <a href="#mobile-header-left-nav" id="header-left-menu" class="genericon genericon-menu">
+            <span class="mobile-menu-text">Menu</span>
+        </a>
+    </div><!-- #mobile-header-menu -->
+
+        <div id="mobile-header-right-menu" class="mobile-menu-anchor header-right-menu">
+        <a href="#mobile-header-right-nav" id="header-right-menu" class="genericon genericon-menu">
+            <span class="mobile-menu-text">Menu</span>
+        </a>
+    </div><!-- #mobile-header-menu -->
+
+    <div id="site-branding">
+		<div id="site-header">
+			<h1 class="site-title"><a href="https://web.northeastern.edu/prehealth/">PreHealth Advising Program</a></h1>
+			<h2 class="site-description">prepare for your future in medicine</h2>
+		</div><!-- #site-header --></div><!-- #site-branding-->
+
+<aside class="sidebar sidebar-header-right widget-area">
+	    	<nav class="nav-header-right" role="navigation">
+            <div class="wrapper">
+                <h1 class="assistive-text">Header Right Menu</h1>
+                <div class="screen-reader-text skip-link"><a href="#content" title="Skip to content">Skip to content</a></div>
+                <div class="menu-sidebar-container"><ul id="menu-sidebar" class="menu catchbase-nav-menu"><li id="menu-item-134" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-134"><a href="https://web.northeastern.edu/prehealth/contact-us">Contact Us</a>
+<ul class="sub-menu">
+	<li id="menu-item-133" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-133"><a href="https://web.northeastern.edu/prehealth/contact-us/prehealth-advisors">PreHealth Advisors</a></li>
+	<li id="menu-item-131" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-131"><a href="https://web.northeastern.edu/prehealth/contact-us/prehealth-committee">PreHealth Committee</a></li>
+	<li id="menu-item-132" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-132"><a href="https://web.northeastern.edu/prehealth/contact-us/student-organizations">Student Organizations</a></li>
+</ul>
+</li>
+</ul></div>        	</div><!-- .wrapper -->
+        </nav><!-- .nav-secondary -->
+	</aside><!-- .sidebar .header-sidebar .widget-area -->
+
+    
+        <div id="mobile-secondary-menu" class="mobile-menu-anchor secondary-menu">
+            <a href="#mobile-secondary-nav" id="secondary-menu" class="genericon genericon-menu">
+                <span class="mobile-menu-text">Menu</span>
+            </a>
+        </div><!-- #mobile-header-menu -->
+    			</div><!-- .wrapper -->
+		</header><!-- #masthead -->
+		<!-- Disable Header Image -->    	<nav class="nav-primary search-enabled" role="navigation">
+            <div class="wrapper">
+                <h1 class="assistive-text">Primary Menu</h1>
+                <div class="screen-reader-text skip-link"><a href="#content" title="Skip to content">Skip to content</a></div>
+                <ul id="menu-main-menu" class="menu catchbase-nav-menu"><li id="menu-item-83" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-83"><a href="https://web.northeastern.edu/prehealth/">Home</a></li>
+<li id="menu-item-98" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-32 current_page_item menu-item-has-children menu-item-98"><a href="https://web.northeastern.edu/prehealth/exploring-medicine">Exploring Medicine</a>
+<ul class="sub-menu">
+	<li id="menu-item-86" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-86"><a href="https://web.northeastern.edu/prehealth/exploring-medicine/allopathic-medicine">Allopathic Medicine</a></li>
+	<li id="menu-item-96" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-96"><a href="https://web.northeastern.edu/prehealth/exploring-medicine/dental-medicine">Dental Medicine</a></li>
+	<li id="menu-item-101" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-101"><a href="https://web.northeastern.edu/prehealth/exploring-medicine/optometric-medicine">Optometric Medicine</a></li>
+	<li id="menu-item-102" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-102"><a href="https://web.northeastern.edu/prehealth/exploring-medicine/osteopathic-medicine">Osteopathic Medicine</a></li>
+	<li id="menu-item-105" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-105"><a href="https://web.northeastern.edu/prehealth/exploring-medicine/podiatric-medicine">Podiatric Medicine</a></li>
+	<li id="menu-item-115" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-115"><a href="https://web.northeastern.edu/prehealth/exploring-medicine/veterinary-medicine">Veterinary Medicine</a></li>
+	<li id="menu-item-109" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-109"><a href="https://web.northeastern.edu/prehealth/exploring-medicine/research-and-medicine">Research and Medicine</a></li>
+	<li id="menu-item-1152" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1152"><a href="https://web.northeastern.edu/prehealth/public-health">Public Health</a></li>
+	<li id="menu-item-1119" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1119"><a href="https://web.northeastern.edu/prehealth/literature-on-admissions">Literature on Admissions</a></li>
+	<li id="menu-item-103" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-103"><a href="https://web.northeastern.edu/prehealth/exploring-medicine/other-health-fields">Other Health Fields</a>
+	<ul class="sub-menu">
+		<li id="menu-item-1034" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1034"><a href="https://web.northeastern.edu/prehealth/chiropractic">Chiropractic</a></li>
+		<li id="menu-item-1053" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1053"><a href="https://web.northeastern.edu/prehealth/genetic-counselor">Genetic Counselor</a></li>
+		<li id="menu-item-1040" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1040"><a href="https://web.northeastern.edu/prehealth/naturopathic-physician">Naturopathic Physician</a></li>
+		<li id="menu-item-718" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-718"><a href="https://web.northeastern.edu/prehealth/exploring-medicine/other-health-fields/nurse-practitioners">Nurse Practitioner</a></li>
+		<li id="menu-item-104" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-104"><a href="https://web.northeastern.edu/prehealth/exploring-medicine/other-health-fields/physicians-assistant">Physician&#8217;s Assistant</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-84" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-84"><a href="https://web.northeastern.edu/prehealth/academic-preparation">Academic Preparation</a>
+<ul class="sub-menu">
+	<li id="menu-item-710" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-710"><a href="https://web.northeastern.edu/prehealth/academic-preparation/coursework">Required Coursework</a></li>
+	<li id="menu-item-1086" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1086"><a href="https://web.northeastern.edu/prehealth/studying-tips-and-resources">Studying Tips and Resources</a></li>
+	<li id="menu-item-94" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-94"><a href="https://web.northeastern.edu/prehealth/academic-preparation/competency-based-education-for-pre-md">Holistic Review for Medical School Applicants</a></li>
+	<li id="menu-item-711" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-711"><a href="https://web.northeastern.edu/prehealth/academic-preparation/admissions-exam-prep">Entrance Exam Prep</a></li>
+	<li id="menu-item-106" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-106"><a href="https://web.northeastern.edu/prehealth/academic-preparation/preparing-for-the-mcat2015">Preparing for the MCAT®</a></li>
+</ul>
+</li>
+<li id="menu-item-97" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-97"><a href="https://web.northeastern.edu/prehealth/experiential-preparation">Experiential Preparation</a>
+<ul class="sub-menu">
+	<li id="menu-item-91" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-91"><a href="https://web.northeastern.edu/prehealth/experiential-preparation/campuscommunity-involvement">Campus/Community Involvement</a></li>
+	<li id="menu-item-92" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-92"><a href="https://web.northeastern.edu/prehealth/experiential-preparation/clinicalvolunteer-experience">Clinical/Volunteer Experience</a></li>
+	<li id="menu-item-93" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-93"><a href="https://web.northeastern.edu/prehealth/experiential-preparation/co-op-opportunities">Co-op Opportunities</a></li>
+	<li id="menu-item-893" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-893"><a href="https://web.northeastern.edu/prehealth/gap-year-ideas">Gap Year Ideas</a></li>
+	<li id="menu-item-100" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-100"><a href="https://web.northeastern.edu/prehealth/experiential-preparation/international-experience">International Experience</a></li>
+	<li id="menu-item-108" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-108"><a href="https://web.northeastern.edu/prehealth/experiential-preparation/research">Research</a></li>
+	<li id="menu-item-112" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-112"><a href="https://web.northeastern.edu/prehealth/experiential-preparation/summer-internships">Summer Internships</a></li>
+</ul>
+</li>
+<li id="menu-item-686" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-686"><a href="https://web.northeastern.edu/prehealth/applicant-pages">Application</a>
+<ul class="sub-menu">
+	<li id="menu-item-687" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-687"><a href="https://web.northeastern.edu/prehealth/applicant-pages/timeline-to-application">Timeline to Application</a></li>
+	<li id="menu-item-863" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-863"><a href="https://web.northeastern.edu/prehealth/personal-statement-2">Personal Statement</a></li>
+	<li id="menu-item-933" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-933"><a href="https://web.northeastern.edu/prehealth/researching-schools">Researching Schools</a></li>
+	<li id="menu-item-867" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-867"><a href="https://web.northeastern.edu/prehealth/the-primary-application">The Primary Application</a></li>
+	<li id="menu-item-870" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-870"><a href="https://web.northeastern.edu/prehealth/secondary-applications">Secondary Applications</a></li>
+	<li id="menu-item-874" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-874"><a href="https://web.northeastern.edu/prehealth/preparing-for-the-interview">Preparing for the Interview</a></li>
+	<li id="menu-item-1018" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1018"><a href="https://web.northeastern.edu/prehealth/paying-for-your-post-graduate-education">Paying for Your Post-Graduate Education</a></li>
+	<li id="menu-item-926" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-926"><a href="https://web.northeastern.edu/prehealth/applicant-pages/workshops">Workshops</a></li>
+</ul>
+</li>
+<li id="menu-item-716" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-716"><a href="https://web.northeastern.edu/prehealth/applicant-pages/letters-of-evaluation">Letter Process</a>
+<ul class="sub-menu">
+	<li id="menu-item-715" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-715"><a href="https://web.northeastern.edu/prehealth/applicant-pages/self-assessment">Self-Assessment</a></li>
+	<li id="menu-item-860" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-860"><a href="https://web.northeastern.edu/prehealth/applicant-agreements">Applicant Agreement</a></li>
+	<li id="menu-item-848" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-848"><a href="https://web.northeastern.edu/prehealth/the-committee-letter">**Committee Letter Requirements**</a></li>
+	<li id="menu-item-851" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-851"><a href="https://web.northeastern.edu/prehealth/letter-packet-requirements">Letter Packet Requirements</a></li>
+	<li id="menu-item-857" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-857"><a href="https://web.northeastern.edu/prehealth/when-and-how-to-ask-for-letters">When and How to Ask for Letters</a></li>
+</ul>
+</li>
+<li id="menu-item-899" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-899"><a href="https://web.northeastern.edu/prehealth/medical-applicant-portal-map">Medical Applicant Portal (MAP)</a></li>
+</ul>                        <div id="search-toggle" class="genericon">
+                            <a class="screen-reader-text" href="#search-container">Search</a>
+                        </div>
+
+                        <div id="search-container" class="displaynone">
+                            
+<form role="search" method="get" class="search-form" action="https://web.northeastern.edu/prehealth/">
+	<label>
+		<span class="screen-reader-text">Search for:</span>
+		<input type="search" class="search-field" placeholder="Search..." value="" name="s" title="Search for:">
+	</label>
+	<input type="submit" class="search-submit" value="Search">
+</form>
+                        </div>
+                                	</div><!-- .wrapper -->
+        </nav><!-- .nav-primary -->
+            	<nav class="nav-secondary" role="navigation">
+            <div class="wrapper">
+                <h1 class="assistive-text">Secondary Menu</h1>
+                <div class="screen-reader-text skip-link"><a href="#content" title="Skip to content">Skip to content</a></div>
+                        	</div><!-- .wrapper -->
+        </nav><!-- .nav-secondary -->
+
+		<div id="content" class="site-content">
+			<div class="wrapper">
+	
+	<main id="main" class="site-main" role="main">
+
+	
+<article id="post-32" class="post-32 page type-page status-publish hentry">
+
+	<!-- Page/Post Single Image Disabled or No Image set in Post Thumbnail -->	
+	
+	<div class="entry-container">
+		
+		<header class="entry-header">
+			
+			<h1 class="entry-title">Info On the Go</h1>
+		
+		</header><!-- .entry-header -->
+
+		
+			<p> <font color="cc0000">Catherine Luo</font> | March 19, 2017 </p>
+		<div class="entry-content">
+			
+			<p>The pre-health life is a demanding life. Along the way, you may have found yourself staring into a textbook at two a.m. wondering if any of this was really worth it. As pre-health advisors, we often encourage students considering this path to thoroughly explore the healthcare profession before jumping in.</p>
+			<p>As you're all well aware, the most hands-on method of exploration is <a style="color: #cc0000;" href="https://web.northeastern.edu/prehealth/experiential-preparation/clinicalvolunteer-experience">shadowing</a>. But last month, we added on to this with a list of recommended books for aspiring healthcare professionals. Many students responded that amidst their busy schedules, it was difficult to fit in time to read books outside of course requirements. We received many requests for quicker, more convenient resources for staying informed of topics in medicine and healthcare.</p>
+			<p>Our answer to these requests is the following list of blogs that we feel can provide students with concise and regular updates on what’s going on in healthcare. Healthcare is a diverse profession, and to reflect this, we’ve chosen blogs that cover topics and news from different perspectives in the field.</p> 
+
+<h2 style="color: #000000;"><span style="color: #000000;">Public and Global Healthcare Blogs</span></h2>
+
+<h3 style="color: #000000;"><span style="color: #000000;"><a style="color: #cc0000;" href="http://www.npr.org/sections/health-shots/">NPR Shots</a></span></h3>
+<p>
+<img src="images/npr.png" width="300" alt="NPR Shots" align="right">
+
+   NPR Shots, the health news section of National Public Radio, delivers articles spanning the spectrum of healthcare topics. 
+   This blog closely follows the format of typical news outlets, with articles ranging from neutral coverage to more opinionated commentary. 
+   You can easily navigate the blog’s 5 topics – Your Health, Treatment & Tests, Policy-ish, Health Inc., and Public Health. 
+   Each section compiles articles summarizing the most striking healthcare developments in layman terms so there’s no need to stretch your brain and tackle heavy jargon.
+   Complete with podcasts, videos and eye-catching visuals, NPR shots provides a comprehensive and engaging view of the current state of healthcare in the US. 
+   Articles often feature <a style="color: #cc0000;" href="http://www.npr.org/sections/health-shots/2017/03/13/519997808/surgeon-on-health-care-bill-the-stakes-are-extremely-high-for-patients/">interviews with experts</a> to provide greater insight into the voices influencing the future of healthcare. 
+   As part of a public radio aiming to inform a wide audience, NPR Shots is a great starting point for exploring the complex topics that shape and define healthcare. 
+</p>
+
+<h3 style="color: #000000;"><span style="color: #000000;"><a style="color: #cc0000;" href="http://www.kevinmd.com/blog/">KevinMD.com</a></span></h3>
+<p>
+<img src="images/KevinMDlogoGB.png" width="300" alt = "KevinMD" align="left">
+   KevinMD.com is the self-proclaimed leader in social media for physicians. Although the blog’s target audience is physicians and healthcare providers, you may find it worthwhile to see the conversations going on in healthcare.
+   This is a commentary-heavy blog that ponders the moral and human issues that arise in the day-to-day lives of healthcare providers. 
+   Posts are authored by healthcare providers and patients, and provide firsthand insight into the patient-centric side of healthcare. 
+   You’ll find that some posts serve as passionate <a style="color: #cc0000;" href="http://www.kevinmd.com/blog/2017/03/let-primary-care-doctors-practice-outpatient-medicine.html">call to action</a>, 
+   while others evoke <a style="color: #cc0000;" href="http://www.kevinmd.com/blog/2017/03/er-touches-untouchables-society.html">thoughtful reflection</a> encouraging providers to critically analyze the current state of healthcare. 
+   If you’re following the blog on your browser, you may find the sidebar of popular posts and recent health news to be particularly helpful for navigating the site. 
+   Posts on KevinMD.com cover topics from sweeping healthcare policy to personal musings on the profession. 
+   No matter the topic, each post ultimately circles back to the role that healthcare plays in bettering the lives of patients. 
+</p>
+
+<h3 style="color: #000000;"><span style="color: #000000;"><a style="color: #cc0000;" href="http://blogs.msf.org/en">Medicins Sans Frontieres</a></span></h3>
+<p>
+<img src="images/msf.png" width="250" alt = "MSF" align="right">
+   Medicins Sans Frontiers (MSF), also known as Doctors Without Borders, is a <a style="color: #cc0000;" href=" http://www.doctorswithoutborders.org/our-work">global humanitarian health organization</a>. 
+   In recent news, their staff have provided aid throughout armed conflicts in Syria and Sudan and natural disaster in Nepal.  
+   Blogs are maintained by patients and MSF staff from around the world and transcend cultural divides to shed light on global health disparities. Authors update posts throughout their missions or treatments. 
+   These unfiltered accounts of their experiences provide readers from diverse backgrounds with a unique window into the very human struggles, joys, and resilience that shape each writer’s experience. 
+   You may recall one of our recommended books, <u>Six Months in Sudan</u> which was based on the <a style="color: #cc0000;" href="http://blogs.msf.org/en/staff/authors/james-maskalyk">blog of Dr. James Maskalyk</a>.
+   While the medical staff blogs may be of most interest to you, we encourage you to explore patient and administrative staff blogs to better understand the multifaceted nature of healthcare. 
+   For students interested in global health and humanitarianism, the MSF blogs can give you firsthand insight into the ethics, challenges, and rewards of delivering emergency care to those who need it the most.
+</p>
+
+<h2 style="color: #000000;"><span style="color: #000000;">Research and Technology</span></h2>
+
+<h3 style="color: #000000;"><span style="color: #000000;"><a style="color: #cc0000;" href="https://directorsblog.nih.gov/">NIH Director's Blog</a></span></h3>
+<p>
+<img src="images/nih.png" width="200" alt = "nih" align="left">
+   You’re probably familiar with the National Institutes of Health and used their online resources in your courses. 
+   As the name suggests, the blog is maintained by NIH Director <a style="color: #cc0000;" href="https://www.nih.gov/about-nih/who-we-are/nih-director/biographical-sketch-francis-s-collins-md-phd">Dr. Francis Collins</a> and highlights advances in biomedical research. 
+   Although NIH is a US government agency, healthcare research is internationally collaborative and the blog occasionally features studies being conducted around the world. 
+   This blog may be particularly informative for those of you interested in pursuing a <a style="color: #cc0000;" href="https://web.northeastern.edu/prehealth/exploring-medicine/research-and-medicine">PhD</a>, as many posts review recently published research articles. 
+   Don’t be intimidated by Collins’ status as a well-respected physician-scientist – just like the other blogs we’ve listed, his literature reviews are much easier to digest than the dense papers he cites. 
+   If a review sparks an interest, you can always further explore the cited papers at the end of the post. 
+   Interspersed with colorful graphics and eye-opening videos, the NIH Director’s Blog provides a great snapshot of research at the forefront of medicine. 
+</p>
+
+<h3 style="color: #000000;"><span style="color: #000000;"><a style="color: #cc0000;" href="http://spectrum.ieee.org/blog/the-human-os">IEEE Spectrum Human OS</a></span></h3>
+<p>
+<img src="images/ieee.jpg" width="100" alt = "IEEE" align="left">
+   IEEE is the Institute of Electrical and Electronics Engineers. What does this have to do with pre-health, you might ask. 
+   Technology – ranging from electronic health records to the groundbreaking 
+   <a style="color: #cc0000;" href="http://spectrum.ieee.org/the-human-os/robotics/medical-robots/autonomous-robot-surgeon-bests-human-surgeons-in-world-first">da Vinci robotic surgery system</a> – has a rapidly growing presence in medicine. 
+   Although IEEE Spectrum is geared towards tech-savvy readers, the Human OS blog is a great resource for any student interested in understanding and keeping up with healthcare technology. 
+   No in-depth technical knowledge is required to appreciate the advancements that aim to optimize the quality, efficiency, and accessibility of modern healthcare. 
+   Articles featured in Human OS discuss recent developments in biomedical engineering and their potential impact – both positive and negative – on medicine. 
+   You may want to further explore the clinical studies cited in the blog to gain insight into the collaboration between engineers and physicians to advance healthcare. 
+   As you read through this blog, we encourage you to take note of the engineer’s perspective on healthcare and formulate your own opinions as a future healthcare professional. 
+</p>
+
+<p>
+   We encourage you to use the commentary, perspectives, and information you encounter in these blogs to guide your understanding of healthcare and continue these conversations amongst your peers. 
+   You can easily stay updated on current events by subscribing to a blog through Facebook, Twitter, email, and similar social media platforms. 
+   This is by no means a comprehensive list of blogs, and as you will notice, the topics addressed in each blog reflect the interests of the writers. 
+   We advise you to approach these blogs with a critical mind and seek multiple perspectives on issues. 
+   Each blog is filled with direct links to primary sources of research and healthcare news that you may want to further explore to enrich your understanding of these topics. 
+   If you’ve come across helpful and informative blogs on your own time, feel free to email us your questions and suggestions!  
+</p>
+
+<p>
+   Tags: 
+	<font color="#cc0000">Health News, Recommendations, Student Resources, Public Health, Global Health, Research</font>
+</p>
+
+
+
+					</div><!-- .entry-content -->
+			</div><!-- .entry-container -->
+</article><!-- #post-## -->
+
+			
+		
+	</main><!-- #main -->
+
+
+	
+   
+		
+<aside class="sidebar sidebar-primary widget-area" role="complementary">
+	
+	<section id="text-4" class="widget widget_text">
+		<div class="widget-wrap">
+			<h4 class="widget-title">Book appointments with your pre-health advisor through MyNEU!</h4>
+	</section><!-- . widget-wrap -->		
+	<section id="lsi_widget-4" class="widget widget_lsi_widget">
+		<div class="widget-wrap">
+		<ul class="lsi-social-icons icon-set-lsi_widget-4" style="text-align: left">
+			<li class="lsi-social-facebook"><a class="" rel="nofollow" title="Facebook" aria-label="Facebook" href="https://www.facebook.com/NortheasternPreHealth?fref=ts" ><i class="lsicon lsicon-facebook"></i></a></li>
+			<li class="lsi-social-twitter"><a class="" rel="nofollow" title="Twitter" aria-label="Twitter" href="https://twitter.com/NUPreHealth" ><i class="lsicon lsicon-twitter"></i></a></li>
+		</ul>
+		</div><!-- .widget-wrap -->
+	</section><!-- #widget-default-search -->
+	<section id="text-4" class="widget widget_text">
+		<div class="widget-wrap">
+			<h4 class="widget-title">PreHealth&#8217;s Latest Tweets</h4>			
+		<div class="textwidget"><p><a class="twitter-timeline" href="https://twitter.com/NUPreHealth" data-widget-id="546061608074874881">Tweets by @NUPreHealth</a><br />
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></p>
+</div>
+		
+		</div>
+		<!-- .widget-wrap -->
+	</section><!-- #widget-default-search -->
+	<section id="text-11" class="widget widget_text">
+		<div class="widget-wrap">
+			<h4 class="widget-title">Upcoming Events</h4>
+			<div class="textwidget"><p><iframe src="https://www.google.com/calendar/embed?mode=AGENDA&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=nuprehealth%40gmail.com&amp;color=%23333333&amp;ctz=America%2FNew_York" style=" border-width:0 " width="800" height="600" frameborder="0" scrolling="no"></iframe></p>
+</div>
+		
+		</div><!-- .widget-wrap -->
+	</section><!-- #widget-default-search -->		
+
+</aside><!-- .sidebar sidebar-primary widget-area -->
+	
+
+			
+	</div><!-- .wrapper -->	
+			
+	    </div><!-- #content -->
+		            
+	<footer id="colophon" class="site-footer" role="contentinfo">
+    
+	    	<div id="site-generator" class="one">
+	    		<div class="wrapper"><div id="footer-right-content" class="powered">360 Huntington Ave., Boston, Massachusetts 02115 · 617.373.2000 · TTY 617.373.3768
+© 2014 Northeastern University</div>
+				</div><!-- .wrapper -->
+			</div><!-- #site-generator -->	</footer><!-- #colophon -->
+			</div><!-- #page -->
+		
+<a href="#masthead" id="scrollup" class="genericon"><span class="screen-reader-text">Scroll Up</span></a><nav id="mobile-header-left-nav" class="mobile-menu" role="navigation"><ul id="header-left-nav" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-83"><a href="https://web.northeastern.edu/prehealth/">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-32 current_page_item menu-item-has-children menu-item-98"><a href="https://web.northeastern.edu/prehealth/exploring-medicine">Exploring Medicine</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-86"><a href="https://web.northeastern.edu/prehealth/exploring-medicine/allopathic-medicine">Allopathic Medicine</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-96"><a href="https://web.northeastern.edu/prehealth/exploring-medicine/dental-medicine">Dental Medicine</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-101"><a href="https://web.northeastern.edu/prehealth/exploring-medicine/optometric-medicine">Optometric Medicine</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-102"><a href="https://web.northeastern.edu/prehealth/exploring-medicine/osteopathic-medicine">Osteopathic Medicine</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-105"><a href="https://web.northeastern.edu/prehealth/exploring-medicine/podiatric-medicine">Podiatric Medicine</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-115"><a href="https://web.northeastern.edu/prehealth/exploring-medicine/veterinary-medicine">Veterinary Medicine</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-109"><a href="https://web.northeastern.edu/prehealth/exploring-medicine/research-and-medicine">Research and Medicine</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1152"><a href="https://web.northeastern.edu/prehealth/public-health">Public Health</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1119"><a href="https://web.northeastern.edu/prehealth/literature-on-admissions">Literature on Admissions</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-103"><a href="https://web.northeastern.edu/prehealth/exploring-medicine/other-health-fields">Other Health Fields</a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1034"><a href="https://web.northeastern.edu/prehealth/chiropractic">Chiropractic</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1053"><a href="https://web.northeastern.edu/prehealth/genetic-counselor">Genetic Counselor</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1040"><a href="https://web.northeastern.edu/prehealth/naturopathic-physician">Naturopathic Physician</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-718"><a href="https://web.northeastern.edu/prehealth/exploring-medicine/other-health-fields/nurse-practitioners">Nurse Practitioner</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-104"><a href="https://web.northeastern.edu/prehealth/exploring-medicine/other-health-fields/physicians-assistant">Physician&#8217;s Assistant</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-84"><a href="https://web.northeastern.edu/prehealth/academic-preparation">Academic Preparation</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-710"><a href="https://web.northeastern.edu/prehealth/academic-preparation/coursework">Required Coursework</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1086"><a href="https://web.northeastern.edu/prehealth/studying-tips-and-resources">Studying Tips and Resources</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-94"><a href="https://web.northeastern.edu/prehealth/academic-preparation/competency-based-education-for-pre-md">Holistic Review for Medical School Applicants</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-711"><a href="https://web.northeastern.edu/prehealth/academic-preparation/admissions-exam-prep">Entrance Exam Prep</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-106"><a href="https://web.northeastern.edu/prehealth/academic-preparation/preparing-for-the-mcat2015">Preparing for the MCAT®</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-97"><a href="https://web.northeastern.edu/prehealth/experiential-preparation">Experiential Preparation</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-91"><a href="https://web.northeastern.edu/prehealth/experiential-preparation/campuscommunity-involvement">Campus/Community Involvement</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-92"><a href="https://web.northeastern.edu/prehealth/experiential-preparation/clinicalvolunteer-experience">Clinical/Volunteer Experience</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-93"><a href="https://web.northeastern.edu/prehealth/experiential-preparation/co-op-opportunities">Co-op Opportunities</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-893"><a href="https://web.northeastern.edu/prehealth/gap-year-ideas">Gap Year Ideas</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-100"><a href="https://web.northeastern.edu/prehealth/experiential-preparation/international-experience">International Experience</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-108"><a href="https://web.northeastern.edu/prehealth/experiential-preparation/research">Research</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-112"><a href="https://web.northeastern.edu/prehealth/experiential-preparation/summer-internships">Summer Internships</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-686"><a href="https://web.northeastern.edu/prehealth/applicant-pages">Application</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-687"><a href="https://web.northeastern.edu/prehealth/applicant-pages/timeline-to-application">Timeline to Application</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-863"><a href="https://web.northeastern.edu/prehealth/personal-statement-2">Personal Statement</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-933"><a href="https://web.northeastern.edu/prehealth/researching-schools">Researching Schools</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-867"><a href="https://web.northeastern.edu/prehealth/the-primary-application">The Primary Application</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-870"><a href="https://web.northeastern.edu/prehealth/secondary-applications">Secondary Applications</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-874"><a href="https://web.northeastern.edu/prehealth/preparing-for-the-interview">Preparing for the Interview</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1018"><a href="https://web.northeastern.edu/prehealth/paying-for-your-post-graduate-education">Paying for Your Post-Graduate Education</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-926"><a href="https://web.northeastern.edu/prehealth/applicant-pages/workshops">Workshops</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-716"><a href="https://web.northeastern.edu/prehealth/applicant-pages/letters-of-evaluation">Letter Process</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-715"><a href="https://web.northeastern.edu/prehealth/applicant-pages/self-assessment">Self-Assessment</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-860"><a href="https://web.northeastern.edu/prehealth/applicant-agreements">Applicant Agreement</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-848"><a href="https://web.northeastern.edu/prehealth/the-committee-letter">**Committee Letter Requirements**</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-851"><a href="https://web.northeastern.edu/prehealth/letter-packet-requirements">Letter Packet Requirements</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-857"><a href="https://web.northeastern.edu/prehealth/when-and-how-to-ask-for-letters">When and How to Ask for Letters</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-899"><a href="https://web.northeastern.edu/prehealth/medical-applicant-portal-map">Medical Applicant Portal (MAP)</a></li>
+</ul></nav><!-- #mobile-header-left-nav --><nav id="mobile-header-right-nav" class="mobile-menu" role="navigation"><ul id="header-right-nav" class="menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-134"><a href="https://web.northeastern.edu/prehealth/contact-us">Contact Us</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-133"><a href="https://web.northeastern.edu/prehealth/contact-us/prehealth-advisors">PreHealth Advisors</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-131"><a href="https://web.northeastern.edu/prehealth/contact-us/prehealth-committee">PreHealth Committee</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-132"><a href="https://web.northeastern.edu/prehealth/contact-us/student-organizations">Student Organizations</a></li>
+</ul>
+</li>
+</ul></nav><!-- #mobile-header-right-nav --><nav id="mobile-secondary-nav" class="mobile-menu" role="navigation"></nav><!-- #mobile-secondary-nav -->
+	<div style="display:none">
+	</div>
+<link rel='stylesheet' id='lsi-style-css'  href='https://web.northeastern.edu/prehealth/wp-content/plugins/lightweight-social-icons/css/style-min.css?ver=0.9' type='text/css' media='all' />
+<style id='lsi-style-inline-css' type='text/css'>
+
+			.icon-set-lsi_widget-4 a, 
+			.icon-set-lsi_widget-4 a:visited, 
+			.icon-set-lsi_widget-4 a:focus {
+				border-radius: 2px;
+				background: #1E72BD !important;
+				color: #FFFFFF !important;
+				font-size: 20px !important;
+			}
+			.icon-set-lsi_widget-4 a:hover {
+				background: #777777 !important;
+				color: #FFFFFF !important;
+			}
+</style>
+<script type='text/javascript' src='https://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201712'></script>
+<script type='text/javascript' src='https://web.northeastern.edu/prehealth/wp-content/themes/catch-base-pro/js/navigation.min.js?ver=20120206'></script>
+<script type='text/javascript' src='https://web.northeastern.edu/prehealth/wp-content/themes/catch-base-pro/js/skip-link-focus-fix.min.js?ver=20130115'></script>
+<script type='text/javascript' src='https://web.northeastern.edu/prehealth/wp-content/themes/catch-base-pro/js/fitvids.min.js?ver=1.1'></script>
+<script type='text/javascript' src='https://web.northeastern.edu/prehealth/wp-content/themes/catch-base-pro/js/jquery.cycle/jquery.cycle2.min.js?ver=2.1.5'></script>
+<script type='text/javascript' src='https://web.northeastern.edu/prehealth/wp-content/themes/catch-base-pro/js/catchbase-scrollup.min.js?ver=20072014'></script>
+<script type='text/javascript' src='https://web.northeastern.edu/prehealth/wp-content/plugins/google-calendar-events/assets/js/vendor/jquery.qtip.min.js?ver=3.1.8'></script>
+<script type='text/javascript' src='https://web.northeastern.edu/prehealth/wp-content/plugins/google-calendar-events/assets/js/vendor/moment.min.js?ver=3.1.8'></script>
+<script type='text/javascript' src='https://web.northeastern.edu/prehealth/wp-content/plugins/google-calendar-events/assets/js/vendor/moment-timezone-with-data.min.js?ver=3.1.8'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var simcal_default_calendar = {"ajax_url":"\/prehealth\/wp-admin\/admin-ajax.php","nonce":"17b55b0575","locale":"en_US","text_dir":"ltr","months":{"full":["January","February","March","April","May","June","July","August","September","October","November","December"],"short":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]},"days":{"full":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"short":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]},"meridiem":{"AM":"AM","am":"am","PM":"PM","pm":"pm"}};
+var simcal_default_calendar = {"ajax_url":"\/prehealth\/wp-admin\/admin-ajax.php","nonce":"17b55b0575","locale":"en_US","text_dir":"ltr","months":{"full":["January","February","March","April","May","June","July","August","September","October","November","December"],"short":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]},"days":{"full":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"short":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]},"meridiem":{"AM":"AM","am":"am","PM":"PM","pm":"pm"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://web.northeastern.edu/prehealth/wp-content/plugins/google-calendar-events/assets/js/default-calendar.min.js?ver=3.1.8'></script>
+<script type='text/javascript' src='https://web.northeastern.edu/prehealth/wp-content/plugins/easy-twitter-feed-widget/lib/js/widget-easy-twitter-feed-widget.js?ver=1.0'></script>
+<script type='text/javascript' src='https://web.northeastern.edu/prehealth/wp-content/plugins/google-calendar-events/assets/js/vendor/imagesloaded.pkgd.min.js?ver=3.1.8'></script>
+<script type='text/javascript' src='https://web.northeastern.edu/prehealth/wp-includes/js/wp-embed.min.js?ver=4.6.1'></script>
+<script type='text/javascript' src='https://stats.wp.com/e-201712.js' async defer></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:4.3.2',blog:'81359431',post:'32',tz:'0',srv:'web.northeastern.edu'} ]);
+	_stq.push([ 'clickTrackerInit', '81359431', '32' ]);
+</script>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"fb0f38ac86","applicationID":"25850808","transactionName":"MgNQYkcEVkpYV0UIXwtJc1VBDFdXFkRQBlU=","queueTime":0,"applicationTime":1221,"atts":"HkRTFA8eRUQ=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
